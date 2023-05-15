@@ -43,7 +43,7 @@ const verifyJWT = (req, res, next) => {
 async function run() {
   try {
     // Connect the client to the server	(optional starting in v4.7)
-    await client.connect();
+    client.connect();
 
     const serviceCollection = client.db("carDoctor").collection("services");
     const bookingCollection = client.db("carDoctor").collection("bookings");
@@ -136,3 +136,5 @@ app.get("/", (req, res) => {
 app.listen(port, () => {
   console.log(`Car doctor port : ${port}`);
 });
+
+// live server site : https://car-doctor-server-seven-phi.vercel.app/
